@@ -27,7 +27,7 @@ jobs:
       - name: "Build"
         shell: powershell
         run: |
-          nvcc src/main.cu -o x86_64_windows.exe -O3 -Xptxas -v -lbcrypt -gencode arch=compute_52,code=compute_52
+          nvcc -allow-unsupported-compiler src/main.cu -o x86_64_windows.exe -O3 -Xptxas -v -lbcrypt -gencode arch=compute_52,code=compute_52
 
       - uses: ncipollo/release-action@v1
         with:
